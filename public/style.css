@@ -18,3 +18,9 @@ h1 {
   border-radius: 5px;
   color: #468966;
 }
+.navbar a {
+    color: pink;
+    text-decoration: none;
+}
+.navbar ul {list-style: none;}
+.navbar li {display: inline-block;float: left;padding:15px;}
