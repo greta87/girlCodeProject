@@ -13,6 +13,7 @@
 </ul>
     <div class="note"></div>
       <form method="post" action="/posts">
+          <input type="text" name="author" value="your name here" class="authorInput"></input>
           <input type="text" name="message" value="message goes here" class="messageInput"></input>
           <input type="text" name="image" value="image link goes here" class="imageInput"></input>
           <button class="postButton">Post it!</button>
@@ -21,6 +22,7 @@
       var myCoolFunction = function (e) {
     e.preventDefault();
     var data = {};
+    data.author = $(".authorInput").val();
     data.message = $(".messageInput").val();
     data.image = $(".imageInput").val();
        $(".note").text("Thanks! Your message was saved!");
