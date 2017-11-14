@@ -18,9 +18,12 @@ h1 {
   border-radius: 5px;
   color: #468966;
 }
+.navbar {height:50px; background-color:#eee; }
 .navbar a {
-    color: pink;
+    color: #888888;
     text-decoration: none;
+    font-weight: 600;
 }
-.navbar ul {list-style: none;}
+.navbar ul {list-style: none;display: block;width: 100%;}
 .navbar li {display: inline-block;float: left;padding:15px;}
+.img-responsive {max-width:100%;}

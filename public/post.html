@@ -6,14 +6,15 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <ul class="navbar">
+<ul class="navbar">
   <li><a href="/">Home</a></li>
   <li><a href="/feed.html">Feed</a></li>
   <li><a href="/post.html">Post</a></li>
 </ul>
     <div class="note"></div>
       <form method="post" action="/posts">
-          <input type="text" name="message" value="message goes here" class="messageInput">
+          <input type="text" name="message" value="message goes here" class="messageInput"></input>
+          <input type="text" name="image" value="image link goes here" class="imageInput"></input>
           <button class="postButton">Post it!</button>
       </form>
       <script>
@@ -21,6 +22,7 @@
     e.preventDefault();
     var data = {};
     data.message = $(".messageInput").val();
+    data.image = $(".imageInput").val();
        $(".note").text("Thanks! Your message was saved!");
     $.post( "/posts" , data );
 
