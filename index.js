@@ -29,6 +29,9 @@ var saveNewPost = function (request, response) {
   post.message = request.body.message;
   post.time = new Date();
   post.image = request.body.image;
+  if (post.image == "") {
+   post.image = "http://d39kbiy71leyho.cloudfront.net/wp-content/uploads/2016/01/19125215/what-age-do-cats-eye-color-change-03-600x600.jpg";
+}
   posts.push(post);
   var dbPosts = database.collection('posts');
   dbPosts.insert(post);
