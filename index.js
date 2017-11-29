@@ -1,3 +1,4 @@
+var database = null;
 //set up
 var express = require('express')
 var app = express();
@@ -26,8 +27,12 @@ var saveNewPost = function (request, response) {
   var post= {};
   post.author = request.body.author;
   post.message = request.body.message;
+  post.time = new Date();
   post.image = request.body.image;
-  posts.push(post); //save it in our list
+  posts.push(post);
+  var dbPosts = database.collection('posts');
+  dbPosts.insert(post);
+ //save it in our list
 
   response.send("thanks for your message. Press back to add another");
 }
@@ -36,3 +41,19 @@ app.post('/posts', saveNewPost);
 //listen for connections on port 3000
 app.listen(process.env.PORT || 3000);
 console.log("Hi! I am listening at http://localhost:3000");
+
+var mongodb = require('mongodb');
+var uri = 'mongodb://gretagotlieb:Passw0rd@ds125016.mlab.com:25016/gretagotlieb';
+mongodb.MongoClient.connect(uri, function(err, newdb) {
+  if(err) throw err;
+  console.log("yay we connected to the database");
+  database = newdb;
+  var dbPosts = database.collection('posts');
+  dbPosts.find(function (err, cursor) {
+    cursor.each(function (err, item) {
+      if (item != null) {
+        posts.push(item);
+      }
+    });
+  });
+});

@@ -27,3 +27,4 @@ h1 {
 .navbar ul {list-style: none;display: block;width: 100%;}
 .navbar li {display: inline-block;float: left;padding:15px;}
 .img-responsive {max-width:60%;}
+.time {color:#000;}
