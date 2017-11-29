@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset='utf-8'>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -13,10 +14,10 @@
 </ul>
     <div class="note"></div>
       <form method="post" action="/posts">
-          <input type="text" name="author" value="your name here" class="authorInput"></input>
-          <input type="text" name="message" value="message goes here" class="messageInput"></input>
-          <input type="text" name="image" value="image link goes here" class="imageInput"></input>
-          <button class="postButton">Post it!</button>
+          <input type="text" name="author" placeholder="Your name" class="authorInput"></input>
+          <input type="text" name="message" placeholder="Message" class="messageInput"></input>
+          <input type="text" name="image" placeholder="Image link" class="imageInput"></input>
+          <button class="postButton">Submit post</button>
       </form>
       <script>
       var myCoolFunction = function (e) {
