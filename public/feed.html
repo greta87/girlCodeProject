@@ -36,6 +36,7 @@ postElement.append(timeElement);
 }
 
 var createFeed = function(posts) {
+  posts.reverse();
   posts.forEach(displayMessage);
 }
 
