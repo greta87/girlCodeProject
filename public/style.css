@@ -35,3 +35,7 @@ margin: 10px;background-color: #2eb52e;color:#fff;font-weight: 700;width: 150px;
 input {padding: 10px;
 margin: 10px;
 border: 1px #ccc solid;}
+
+.postId {
+    display: none;
+}

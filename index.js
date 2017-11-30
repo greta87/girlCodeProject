@@ -21,10 +21,18 @@ var sendPostsList = function (request, response) {
 }
 app.get('/posts', sendPostsList);
 
+app.get('/post', function (req, res) {
+  var post = posts.find(x => x.id == searchId);
+  res.send(post);
+});
+
+
+
 //let a client POST something new
 var saveNewPost = function (request, response) {
   console.log(request.body.message); //write it on the command prompt so we can see
   var post= {};
+  post.id = Math.round(Math.random() * 10000);
   post.author = request.body.author;
   post.message = request.body.message;
   post.time = new Date();

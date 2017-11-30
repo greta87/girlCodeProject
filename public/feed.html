@@ -30,6 +30,9 @@ var displayMessage = function(post) {
   var timeElement = $('<div class="time">' + $.format.prettyDate(post.time) + '</div>');
 postElement.append(timeElement);
 
+   var idElement = $('<div class="postId">' + post.id + '</div>');
+postElement.append(idElement);
+
   var imageElement = $('<img src="' + post.image + '" class="img-responsive">');
   postElement.append(imageElement);
 
