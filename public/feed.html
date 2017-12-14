@@ -4,9 +4,10 @@
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <title>Message Feed</title>
+    <title>Feed | Healthy Pescatarian Foods NZ</title>
     <link rel="stylesheet" href="style.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
   <body>
     <ul class="navbar">
@@ -14,7 +15,7 @@
       <li><a href="/feed.html">Feed</a></li>
       <li><a href="/post.html">Post</a></li>
     </ul>
-    <h1 class="title">Message Feed</h1>
+    <h1 class="title">Healthy Pescatarian Foods NZ</h1>
     <div class="message-list">
     </div>
     <script>
@@ -24,8 +25,12 @@ var displayMessage = function(post) {
   var postElement = $('<div class="post"></div>');
   $(".message-list").append(postElement);
 
-  var messageElement = $('<div class="message">' + post.message +  "<br>Message by " + post.author +  '</div>');
+  var messageElement = $('<div class="message">' + post.message + '</div>');
   postElement.append(messageElement);
+
+  var authorElement = $('<div class="author">' + "<br>Message by " + post.author + '</div>');
+postElement.append(authorElement);
+
 
   var timeElement = $('<div class="time">' + $.format.prettyDate(post.time) + '</div>');
 postElement.append(timeElement);

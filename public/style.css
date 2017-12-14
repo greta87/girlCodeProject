@@ -1,22 +1,29 @@
 body {
   text-align: center;
+  margin:0;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.4;
 }
 
 .message-list {
-  background-color: #FFF0A5;
-  padding: 20px;
+  background-color: #c2e5ff;
+  display: block;
+  position: absolute;
 }
-
+.author {font-size: .8em;}
+.time {font-size: .6em;}
 h1 {
-  color: #FFB03B;
+  color: #000;
+  font-size: 1.6em;
 }
 
 .post {
-  margin: 10px;
-  padding: 10px;
-  border: 2px solid #FFB03B;
+  margin: 10px 0;
+  padding: 15px 0;
   border-radius: 5px;
-  color: #468966;
+  color: #000;
+  width: 25%;
+  float: left;
 }
 .navbar {height:50px; background-color:#eee; }
 .navbar a {
@@ -26,7 +33,7 @@ h1 {
 }
 .navbar ul {list-style: none;display: block;width: 100%;}
 .navbar li {display: inline-block;float: left;padding:15px;}
-.img-responsive {max-width:60%;}
+.img-responsive {max-width:76%;padding:15px 0;}
 .time {color:#000;}
 
 .postButton {padding: 10px;
@@ -38,4 +45,9 @@ border: 1px #ccc solid;}
 
 .postId {
     display: none;
+}
+@media only screen and (max-width : 767px) {
+  .post {
+    width: 100%;
+  }
 }
